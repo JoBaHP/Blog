@@ -6,11 +6,14 @@ const authRoute = require("./routes/auth");
 const usersRoute = require("./routes/users");
 const postRoute = require("./routes/posts");
 const categoryRoute = require("./routes/categories");
+const cors = require("cors");
+const path = require("path");
 
 const multer = require("multer");
 
 dotenv.config();
 app.use(express.json());
+app.use(cors());
 app.use("/images", express.static(path.join(__dirname, "/images")));
 
 mongoose
